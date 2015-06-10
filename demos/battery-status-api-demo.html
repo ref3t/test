@@ -83,7 +83,7 @@
       </div>
 	<br>
 	
-		<div id ="container" style="height: 50px; width: 300px; background: green"	>  <div id="battery" style= "height: 50px; background: red; "> </div> </div>
+		<div id ="battery" style="height: 50px; width: 300px; background: green">  </div>
 	
 	<br>
 	
@@ -112,7 +112,10 @@
                document.getElementById('charging-time').innerHTML = battery.chargingTime;
                document.getElementById('discharging-time').innerHTML = battery.dischargingTime;
                document.getElementById('battery-level').innerHTML = battery.level;
-			   document.getElementById('battery').style.width = battery.level*300 + "px";
+			   if(battery.charging)
+			   document.getElementById('battery').style.background = 'green';
+			   else 
+			   document.getElementById('battery').style.background = 'red';
             }
 
             function addEvents(battery) {

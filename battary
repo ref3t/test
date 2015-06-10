@@ -83,7 +83,7 @@
       </div>
 
       <h3>Log</h3>
-<div id="bat" Style=" background-color:#FFFFFF; border: 2px solid #000000;height: 32px;width: 100px;"><div id="bat2" Style=" background-color:#66CD00; border: 2px solid #000000;height:29px;width: 95px;"></div> </div>
+<div id="bat" Style=" background-color:#FFFFFF; border: 2px solid #000000;height: 32px;width: 100px;"><div id="bat2" Style=" background-color:#66CD00; border: 2px solid #000000;height:29px;width: 100px;"></div> </div>
       <div id="log"></div>
       <button id="clear-log" class="button-demo">Clear log</button>
 
@@ -110,6 +110,14 @@
                document.getElementById('discharging-time').innerHTML = battery.dischargingTime;
                document.getElementById('battery-level').innerHTML = battery.level;
 		document.getElementById('bat2').style.width=stat;
+		if(battery.charging)
+			{
+				document.getElementById('bat2').style.backgroundColor = "green";
+			}else{
+				
+				document.getElementById('bat2').style.backgroundColor = "red";
+				}
+
             }
 
             function addEvents(battery) {
